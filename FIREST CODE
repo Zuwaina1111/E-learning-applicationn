@@ -1,0 +1,17 @@
+students = [{"id": i, "name": f"Student{i}", "grade": (i % 5) + 1} for i in range(1, 101)]
+
+new_course = "Advanced Python Programming"
+
+enrolled_students = []
+
+for student in students:  
+    if student["grade"] > 3:  
+        if len(enrolled_students) < 100:  
+            enrolled_students.append(student["name"])
+            print(f"{student['name']} enrolled in {new_course}.")
+        else:
+            print("Enrollment limit reached!")
+            break
+
+print(f"Total students enrolled: {len(enrolled_students)}")
+
